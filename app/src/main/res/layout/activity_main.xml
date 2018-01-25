@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.route.view.activities.MainActivity">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/myLocationFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="32dp"
+        app:backgroundTint="@color/blue"
+        android:src="@drawable/ic_my_location_white"
+        app:fabSize="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/positioningRouteFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
+        app:backgroundTint="@color/blue"
+        android:src="@drawable/ic_map_white"
+        app:fabSize="auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myLocationFab"
+        tools:targetApi="lollipop" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context="com.route.view.activities.MapsActivity" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <EditText
+                android:id="@+id/firstAddressEt"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/address_background"
+                android:gravity="center_vertical"
+                android:paddingEnd="32dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="32dp"
+                android:paddingStart="16dp"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/firstAddressImb"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center|end"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:src="@drawable/circle_gray" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/lastAddressEt"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/address_background"
+                android:gravity="center_vertical"
+                android:paddingEnd="32dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="32dp"
+                android:paddingStart="16dp"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/lastAddressImb"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center|end"
+                android:background="@android:color/transparent"
+                android:padding="8dp"
+                android:src="@drawable/circle_gray" />
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/getRouteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/blue"
+            android:text="@string/get_route"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
